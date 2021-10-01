@@ -1,0 +1,40 @@
+{
+  "name": "tp-widget",
+  "version": "1.0.0",
+  "description": "test task for TP",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "webpack serve -c config/webpack.config.dev.js",
+    "build": "webpack -c config/webpack.config.prod.js",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint --fix --quiet 'src/**/*.{js,ts,tsx}'"
+  },
+  "author": "dumitruvasiliev",
+  "license": "ISC",
+  "dependencies": {
+    "preact": "^10.5.14"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^4.3.8",
+    "prettier": "^2.4.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.3",
+    "webpack": "^5.55.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  }
+}

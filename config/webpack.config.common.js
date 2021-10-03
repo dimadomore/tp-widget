@@ -3,7 +3,7 @@ const path = require('path');
 const projectDir = path.resolve(__dirname, '../');
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/index.ts',
   output: {
     filename: 'widget.js',
     path: path.resolve(projectDir, './dist'),

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap'); */
 
 .container {
   box-sizing: border-box !important;
@@ -22,6 +22,15 @@
   padding: 0px 20px 15px;
   width: 100%;
   padding-top: 2px;
+
+  &.sm,
+  &.xs {
+    .primaryText {
+      margin-top: 8px;
+      line-height: 24px;
+      font-size: 18px;
+    }
+  }
 }
 
 .primaryText {
@@ -29,12 +38,14 @@
   line-height: 33px;
   font-size: 24px;
   padding-bottom: 10px;
+  font-weight: 600;
 }
 
 .secondaryText {
   color: #ffffff;
   line-height: 14px;
   font-size: 10px;
+  font-weight: 600;
 }
 
 .submit {

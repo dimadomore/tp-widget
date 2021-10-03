@@ -4,8 +4,7 @@ p,
 label,
 input,
 *::before,
-*::after,
-& {
+*::after {
   float: none;
   box-sizing: border-box;
   margin: 0;

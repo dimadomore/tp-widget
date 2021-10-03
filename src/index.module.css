@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+.container {
+  box-sizing: border-box !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif;
+  *,
+  *:before,
+  *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit !important;
+  }
+
+  background-color: #4a90e2;
+  max-width: 1024px;
+  min-width: 200px;
+  padding: 0px 20px 15px;
+  width: 100%;
+  padding-top: 2px;
+}
+
+.primaryText {
+  color: #ffffff;
+  line-height: 33px;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+.secondaryText {
+  color: #ffffff;
+  line-height: 14px;
+  font-size: 10px;
+}
+
+.submit {
+  background-color: #f5a623;
+  border-radius: 2px;
+  text-transform: uppercase;
+  height: 40px;
+  min-height: 40px;
+  letter-spacing: 1.11px;
+  line-height: 40px;
+  width: 100%;
+  font-size: 20px;
+  border: 0;
+  padding: 0;
+  color: #ffffff;
+  box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  outline: none;
+
+  &:active {
+    box-shadow: inset 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+    padding-top: 1px;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  &.md {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      'secondary-text secondary-text secondary-text'
+      'input1 input2 button';
+
+    .secondaryText {
+      grid-area: secondary-text;
+      margin-bottom: -5px;
+    }
+
+    .submit {
+      margin-left: 8px;
+      width: 96%;
+    }
+  }
+  &.sm {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'secondary-text secondary-text'
+      'input1 input2'
+      'button button';
+    .secondaryText {
+      margin-bottom: -5px;
+    }
+  }
+  &.xs {
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    grid-template-areas:
+      'input1'
+      'input2'
+      'button'
+      'secondary-text';
+  }
+
+  &.sm,
+  &.xs {
+    .secondaryText {
+      grid-area: secondary-text;
+    }
+
+    .submit {
+      grid-area: button;
+    }
+  }
+}

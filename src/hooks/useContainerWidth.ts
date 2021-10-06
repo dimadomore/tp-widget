@@ -13,7 +13,7 @@ const mainContainerBreakpoints = {
   xs: 430,
 };
 
-export const useContainerWidth = (): UseDimensionsHook => {
+export const useContainerWidth = (parentRef?: any): UseDimensionsHook => {
   const [width, setWidth] = useState<number>();
   const ref = useRef<HTMLDivElement>(null);
 

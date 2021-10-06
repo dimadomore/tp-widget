@@ -8,13 +8,26 @@
     <title>TP Widget</title>
   </head>
   <body>
-    <script>
-      (function (w,d,s,o,f,js,fjs) {
-        w['TPWidget']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
-        js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-        js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
-      }(window, document, 'script', '_tp', '//SOME_CDN/widget.js'));
-      _tp('init');
-    </script>
+    <div id="here"></div>
+
+    <div id="want here">
+      <!-- <script>
+        (function (w,d,s,o,f,js,fjs) {
+          w['TPWidget']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+          js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+          js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+        }(window, document, 'script', '_tp', 'ffwidget.js'));
+        const script = window.document.currentScript;
+        widget_wrapper = document.createElement("div");
+        widget_wrapper.id = "some unique id";
+        script.parentElement.insertBefore(widget_wrapper, script);
+        _tp('init', { elementId: 'here'});
+      </script> -->
+    </div>
+
+    <div id="AS">
+      <script src="https://c172.travelpayouts.com/content?promo_id=4850&shmarker=334700&trs=148445&locale=en" charset="utf-8"></script>
+    </div>
+   
   </body>
 </html>

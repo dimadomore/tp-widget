@@ -1,22 +1,13 @@
 import { FunctionComponent, h } from 'preact';
 import { useState } from 'preact/hooks';
 
-import { useContainerWidth, useLocalization } from './hooks';
 import { DatePicker, MainContainer } from './components';
+import { useContainerWidth, useLocalization } from './hooks';
+import { CustomizationSettings, Period } from './models';
 
 import styles from './App.module.css';
 
-interface Props {
-  bgColor: string;
-  textColor: string;
-  btnColor: string;
-}
-interface Period {
-  from: string;
-  to: string;
-}
-
-export const App: FunctionComponent<Props> = (props) => {
+export const App: FunctionComponent<CustomizationSettings> = (props) => {
   const [ref, , responsiveClassName] = useContainerWidth();
   const { messages } = useLocalization();
   const [date, setDate] = useState<Period>({ from: '', to: '' });

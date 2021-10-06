@@ -1,7 +1,8 @@
 import { FunctionComponent, h } from 'preact';
+/* eslint-disable */
 // @ts-ignore
 import { Datepicker as Datepickerdate } from 'datepickerdate';
-
+/* eslint-enable */
 import { dateFormatter } from './utils';
 
 import './DatePicker.css';

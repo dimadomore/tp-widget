@@ -1,0 +1,36 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap'); */
+
+.mainContainer,
+.mainContainer *::before,
+.mainContainer *::after {
+  box-sizing: border-box !important;
+  float: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  vertical-align: baseline;
+  text-align: left;
+  text-indent: 0;
+  text-transform: none;
+  white-space: normal;
+  letter-spacing: 0;
+  font-style: normal;
+  line-height: 1;
+  position: initial;
+}
+
+.mainContainer {
+  font-family: 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif !important;
+
+  * {
+    box-sizing: inherit !important;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+}

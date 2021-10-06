@@ -1,13 +1,17 @@
 import { RefObject } from 'preact';
 import { useRef, useState, useLayoutEffect } from 'preact/hooks';
 
-import { mainContainerBreakpoints } from '../utils';
-
 type UseDimensionsHook = [
   RefObject<HTMLDivElement>,
   number | undefined,
   'xs' | 'sm' | 'md' | '',
 ];
+
+const mainContainerBreakpoints = {
+  md: 902,
+  sm: 710,
+  xs: 430,
+};
 
 export const useContainerWidth = (): UseDimensionsHook => {
   const [width, setWidth] = useState<number>();

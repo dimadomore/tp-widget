@@ -81,7 +81,7 @@ export default (
       'id',
       `${instanceName}-${Math.floor(Math.random() * 9999999999)}`,
     );
-    render(targetElement, {});
+    render(targetElement, loadedObject);
 
     // store indication that widget instance was initialized
     win[`loaded-${instanceName}`] = true;

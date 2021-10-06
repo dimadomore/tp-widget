@@ -1,20 +1,25 @@
-import { h } from 'preact';
+import { FunctionComponent, h } from 'preact';
 import { useState } from 'preact/hooks';
 
-import { useContainerWidth } from './hooks';
-import { DatePicker } from './components';
+import { useContainerWidth, useLocalization } from './hooks';
+import { DatePicker, MainContainer } from './components';
 
-import styles from './index.module.css';
-import './reset.css';
+import styles from './App.module.css';
 
-interface PeriodDate {
+interface Props {
+  bgColor: string;
+  textColor: string;
+  btnColor: string;
+}
+interface Period {
   from: string;
   to: string;
 }
 
-export const App = (props: any) => {
+export const App: FunctionComponent<Props> = (props) => {
   const [ref, , responsiveClassName] = useContainerWidth();
-  const [date, setDate] = useState<PeriodDate>({ from: '', to: '' });
+  const { messages } = useLocalization();
+  const [date, setDate] = useState<Period>({ from: '', to: '' });
 
   const handleDateChange = (name: string, value: string) => {
     setDate({ ...date, [name]: value });
@@ -33,37 +38,40 @@ export const App = (props: any) => {
   };
 
   return (
-    <div
-      ref={ref}
-      className={`${styles.container} ${styles[responsiveClassName] ?? ''}`}
-      style={customStyles.container}
-    >
-      <div className={styles.primaryText} style={customStyles.text}>
-        Where does it come from? Why do we use it?
+    <MainContainer>
+      <div
+        ref={ref}
+        className={`${styles.container} ${styles[responsiveClassName] ?? ''}`}
+        style={customStyles.container}
+      >
+        <div className={styles.primaryText} style={customStyles.text}>
+          {messages.primaryText}
+        </div>
+        <div
+          className={`${styles.wrapper} ${styles[responsiveClassName] ?? ''}`}
+        >
+          <p className={styles.secondaryText} style={customStyles.text}>
+            {messages.secondaryText}
+          </p>
+          <DatePicker
+            name="from"
+            value={date.from}
+            placeholder={messages.dateFromPlaceholder}
+            onChange={handleDateChange}
+            calendarColor={props.bgColor}
+          />
+          <DatePicker
+            name="to"
+            value={date.to}
+            placeholder={messages.dateToPlaceholder}
+            onChange={handleDateChange}
+            calendarColor={props.bgColor}
+          />
+          <button className={styles.submitButton} style={customStyles.button}>
+            {messages.search}
+          </button>
+        </div>
       </div>
-      <div className={`${styles.wrapper} ${styles[responsiveClassName] ?? ''}`}>
-        <p className={styles.secondaryText} style={customStyles.text}>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout.
-        </p>
-        <DatePicker
-          name="from"
-          value={date.from}
-          placeholder="Depart date"
-          onChange={handleDateChange}
-          calendarColor={props.bgColor}
-        />
-        <DatePicker
-          name="to"
-          value={date.to}
-          placeholder="Return date"
-          onChange={handleDateChange}
-          calendarColor={props.bgColor}
-        />
-        <button className={styles.submit} style={customStyles.button}>
-          Search
-        </button>
-      </div>
-    </div>
+    </MainContainer>
   );
 };

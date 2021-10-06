@@ -1,21 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap'); */
-
 .container {
-  box-sizing: border-box !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  font-family: 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont,
-    'Segoe UI', Helvetica, Arial, sans-serif;
-  *,
-  *:before,
-  *:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit !important;
-  }
-
   background-color: #4a90e2;
   max-width: 1024px;
   min-width: 200px;
@@ -48,7 +31,7 @@
   font-weight: 600;
 }
 
-.submit {
+.submitButton {
   background-color: #f5a623;
   border-radius: 2px;
   text-transform: uppercase;
@@ -87,7 +70,7 @@
       margin-bottom: -5px;
     }
 
-    .submit {
+    .submitButton {
       margin-left: 8px;
       width: 96%;
     }
@@ -118,7 +101,7 @@
       grid-area: secondary-text;
     }
 
-    .submit {
+    .submitButton {
       grid-area: button;
     }
   }

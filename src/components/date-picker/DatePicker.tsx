@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { FunctionComponent, h } from 'preact';
 // @ts-ignore
 import { Datepicker as Datepickerdate } from 'datepickerdate';
 
@@ -14,13 +14,13 @@ interface Props {
   onChange: (name: string, value: string) => void;
 }
 
-export const DatePicker = ({
+export const DatePicker: FunctionComponent<Props> = ({
   value,
   name,
   placeholder,
   onChange,
   calendarColor = '#4990E2',
-}: Props) => {
+}) => {
   const calendarIcon = (
     <svg className="calendar-icon" width="15" height="17" viewBox="0 0 15 17">
       <path

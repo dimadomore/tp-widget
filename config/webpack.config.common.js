@@ -5,7 +5,7 @@ const projectDir = path.resolve(__dirname, '../');
 module.exports = {
   entry: './src/index.ts',
   output: {
-    filename: 'widget.js',
+    filename: 'tp_widget.js',
     path: path.resolve(projectDir, './dist'),
   },
   plugins: [

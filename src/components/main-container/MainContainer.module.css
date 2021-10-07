@@ -22,7 +22,7 @@
 
 .mainContainer {
   font-family: 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont,
-    'Segoe UI', Helvetica, Arial, sans-serif !important;
+    'Segoe UI', Helvetica, Arial, sans-serif;
 
   * {
     box-sizing: inherit !important;

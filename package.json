@@ -29,6 +29,7 @@
     "husky": "^4.3.8",
     "postcss": "^8.3.8",
     "postcss-loader": "^6.1.1",
+    "postcss-minify": "^1.1.0",
     "postcss-nested": "^5.0.6",
     "postcss-safe-important": "^1.2.1",
     "prettier": "^2.4.1",

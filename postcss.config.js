@@ -3,6 +3,6 @@ module.exports = {
     'autoprefixer',
     'postcss-nested',
     'postcss-safe-important',
-    'cqfill/postcss',
+    'postcss-minify',
   ],
 };

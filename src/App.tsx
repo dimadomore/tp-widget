@@ -1,31 +1,27 @@
 import { FunctionComponent, h } from 'preact';
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 
 import { DatePicker, MainContainer } from './components';
 import { useContainerWidth, useLocalization } from './hooks';
 import { CustomizationSettings, Period } from './models';
+import { applyCustomStyles } from './utils';
 
 import styles from './App.module.css';
 
-export const App: FunctionComponent<CustomizationSettings> = (props) => {
+export const App: FunctionComponent<CustomizationSettings> = ({
+  locale,
+  ...customStyles
+}) => {
   const [ref, , responsiveClassName] = useContainerWidth();
-  const { messages } = useLocalization();
+  const { messages } = useLocalization(locale);
   const [date, setDate] = useState<Period>({ from: '', to: '' });
+
+  useEffect(() => {
+    applyCustomStyles(customStyles, ref);
+  }, []);
 
   const handleDateChange = (name: string, value: string) => {
     setDate({ ...date, [name]: value });
-  };
-
-  const customStyles = {
-    container: {
-      background: props.bgColor,
-    },
-    text: {
-      color: props.textColor,
-    },
-    button: {
-      background: props.btnColor,
-    },
   };
 
   return (
@@ -33,34 +29,25 @@ export const App: FunctionComponent<CustomizationSettings> = (props) => {
       <div
         ref={ref}
         className={`${styles.container} ${styles[responsiveClassName] ?? ''}`}
-        style={customStyles.container}
       >
-        <div className={styles.primaryText} style={customStyles.text}>
-          {messages.primaryText}
-        </div>
+        <div className={styles.primaryText}>{messages.primaryText}</div>
         <div
           className={`${styles.wrapper} ${styles[responsiveClassName] ?? ''}`}
         >
-          <p className={styles.secondaryText} style={customStyles.text}>
-            {messages.secondaryText}
-          </p>
+          <p className={styles.secondaryText}>{messages.secondaryText}</p>
           <DatePicker
             name="from"
             value={date.from}
             placeholder={messages.dateFromPlaceholder}
             onChange={handleDateChange}
-            calendarColor={props.bgColor}
           />
           <DatePicker
             name="to"
             value={date.to}
             placeholder={messages.dateToPlaceholder}
             onChange={handleDateChange}
-            calendarColor={props.bgColor}
           />
-          <button className={styles.submitButton} style={customStyles.button}>
-            {messages.search}
-          </button>
+          <button className={styles.submitButton}>{messages.search}</button>
         </div>
       </div>
     </MainContainer>

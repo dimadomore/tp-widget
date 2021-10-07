@@ -1,5 +1,10 @@
 .container {
-  background-color: #4a90e2;
+  --bg-color: #4a90e2;
+  --text-color: #ffffff;
+  --btn-color: #f5a623;
+
+  background: var(--bg-color);
+  background-color: var(--bg-color);
   max-width: 1024px;
   min-width: 200px;
   padding: 0px 20px 15px;
@@ -17,7 +22,7 @@
 }
 
 .primaryText {
-  color: #ffffff;
+  color: var(--text-color);
   line-height: 33px;
   font-size: 24px;
   padding-bottom: 10px;
@@ -25,14 +30,14 @@
 }
 
 .secondaryText {
-  color: #ffffff;
+  color: var(--text-color);
   line-height: 14px;
   font-size: 10px;
   font-weight: 600;
 }
 
 .submitButton {
-  background-color: #f5a623;
+  background-color: var(--btn-color);
   border-radius: 2px;
   text-transform: uppercase;
   height: 40px;

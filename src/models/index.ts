@@ -1,12 +1,11 @@
-export interface CustomizationSettings {
+export interface StyleCustomizationSettings {
   bgColor?: string;
   textColor?: string;
   btnColor?: string;
-  locale?: string;
 }
 
-export enum Locale {
-  EN = 'en',
+export interface CustomizationSettings extends StyleCustomizationSettings {
+  locale?: string;
 }
 
 export interface Period {

@@ -6,17 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Travelpayouts Frontend Test Task" />
     <title>TP Widget Examples</title>
+    <style>
+      .example {
+        margin-bottom: 50px;
+      }
+
+      .example__second {
+        max-width: 500px;
+      }
+
+      .example__third {
+        max-width: 250px;
+      }
+
+    </style>
   </head>
 <body>
-  <div class="two">
-    <!-- <script src="https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/script/loader.js?test-task=tpdv&bgColor=black&textColor=black&btnColor=yellow" charset="UTF-8"></script> -->
-    <script src="./loader.js?test-task=tpdv&bgColor=black&textColor=black&btnColor=yellow" charset="UTF-8"></script>
-    <div>oerng</div>
+  <!-- Кастомизация осуществляется с помощью query параметров bgColor, textColor, btnColor -->
+  <div class="example example__first">
+    <script src="https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/script/loader.js?test-task=tpdv&bgColor=black&textColor=black&btnColor=yellow" charset="UTF-8"></script>
   </div>
-  <div class="three">three</div>
-  <div style="width: 500px">
-    <!-- <script src="https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/script/loader.js?test-task=tpdv&bgColor=green&textColor=black&btnColor=yellow" charset="UTF-8"></script> -->
-    <script src="./loader.js?test-task=tpdv&bgColor=green&textColor=black&btnColor=yellow" charset="UTF-8"></script>
+  <div class="example example__second">
+    <script src="https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/script/loader.js?test-task=tpdv&bgColor=green&textColor=black&btnColor=yellow" charset="UTF-8"></script>
+  </div>
+  <div class="example example__third">
+    <script src="https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/script/loader.js?test-task=tpdv&bgColor=green&textColor=black&btnColor=yellow" charset="UTF-8"></script>
   </div>
 </body>
 </html>

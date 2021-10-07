@@ -27,9 +27,8 @@
 
       var js = document.createElement('script');
       js.type = 'text/javascript';
-      // js.src =
-      //   'https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/dist/tp_widget.js';
-      js.src = '../dist/tp_widget.js';
+      js.src =
+        'https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/dist/tp_widget.js';
       js.async = 1;
       js.dataset.containerId = containerId;
       widgetWrapper.appendChild(js);

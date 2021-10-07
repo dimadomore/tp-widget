@@ -20,7 +20,7 @@ export const useContainerWidth = (): UseDimensionsHook => {
   useLayoutEffect(() => {
     if (ref.current) {
       const observer = new ResizeObserver((entries) => {
-        for (let entry of entries) {
+        for (const entry of entries) {
           setWidth(entry.borderBoxSize[0].inlineSize);
         }
       });

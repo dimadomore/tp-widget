@@ -6,8 +6,9 @@ enum Locale {
   EN = 'en',
 }
 
-export const useLocalization = () => {
-  const [locale, setLocale] = useState<Locale>(Locale.EN);
+// Need to be extended
+export const useLocalization = (customLocale?: string) => {
+  const [locale, setLocale] = useState<string>(Locale.EN);
 
-  return { locale, messages: messages[locale] };
+  return { messages: messages[Locale.EN], locale };
 };

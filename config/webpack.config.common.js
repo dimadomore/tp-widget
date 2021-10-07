@@ -26,7 +26,10 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            options: { injectType: 'singletonStyleTag' },
+            options: {
+              injectType: 'singletonStyleTag',
+              attributes: { id: 'tp-widget' },
+            },
           },
           {
             loader: 'css-loader',

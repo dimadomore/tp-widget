@@ -13,22 +13,19 @@ const mainContainerBreakpoints = {
   xs: 430,
 };
 
-export const useContainerWidth = (parentRef?: any): UseDimensionsHook => {
+export const useContainerWidth = (): UseDimensionsHook => {
   const [width, setWidth] = useState<number>();
   const ref = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     if (ref.current) {
-      const measure = () =>
-        window.requestAnimationFrame(() =>
-          setWidth(
-            (width) => ref.current?.getBoundingClientRect().width ?? width,
-          ),
-        );
-      measure();
+      const observer = new ResizeObserver((entries) => {
+        for (let entry of entries) {
+          setWidth(entry.borderBoxSize[0].inlineSize);
+        }
+      });
 
-      window.addEventListener('resize', measure);
-      return () => window.removeEventListener('resize', measure);
+      observer.observe(ref.current);
     }
   }, []);
 

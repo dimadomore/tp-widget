@@ -30,7 +30,7 @@ export const DatePicker: FunctionComponent<Props> = ({
   );
 
   return (
-    <div className="date-picker-container">
+    <div className="date-picker-container-wjv84h">
       <Datepickerdate
         value={value}
         name={name}

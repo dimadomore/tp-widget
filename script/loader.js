@@ -20,15 +20,15 @@
       var containerId = '_widget-app-container' + rand;
       div.id = containerId;
       div.dataset.lang = 'en';
-      div.dataset.bgColor = urlParams.bgColor;
-      div.dataset.textColor = urlParams.textColor;
-      div.dataset.btnColor = urlParams.btnColor;
+      if (urlParams.bgColor) div.dataset.bgColor = urlParams.bgColor;
+      if (urlParams.textColor) div.dataset.textColor = urlParams.textColor;
+      if (urlParams.btnColor) div.dataset.btnColor = urlParams.btnColor;
       widgetWrapper.appendChild(div);
 
       var js = document.createElement('script');
       js.type = 'text/javascript';
-      js.src =
-        'https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/dist/tp_widget.js';
+      // Использован локальный путь к виджету.
+      js.src = '../dist/tp_widget.js'; // Ex. https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/dist/tp_widget.js';
       js.async = 1;
       js.dataset.containerId = containerId;
       widgetWrapper.appendChild(js);

@@ -10,27 +10,31 @@
       .example {
         margin-bottom: 50px;
       }
-
-      .example__second {
-        max-width: 500px;
+      .width0_75 {
+        width: 75%;
       }
-
-      .example__third {
-        max-width: 250px;
+      .width500 {
+        width: 500px;
       }
-
+      .width250 {
+        width: 250px;
+      }
     </style>
   </head>
 <body>
   <!-- Кастомизация осуществляется с помощью query параметров bgColor, textColor, btnColor -->
-  <div class="example example__first">
-    <script src="https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/script/loader.js?test-task=tpdv&bgColor=black&textColor=black&btnColor=yellow" charset="UTF-8"></script>
+  <div class="example">
+    <!-- <script src="https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/script/loader.js?test-task=tpdv" charset="UTF-8"></script> -->
+    <script src="./loader.js?test-task=tpdv" charset="UTF-8"></script>
   </div>
-  <div class="example example__second">
-    <script src="https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/script/loader.js?test-task=tpdv&bgColor=green&textColor=black&btnColor=yellow" charset="UTF-8"></script>
+  <div class="example width0_75">
+    <script src="./loader.js?test-task=tpdv&bgColor=#2C2891&textColor=#FFFD95&btnColor=#39A388" charset="UTF-8"></script>
   </div>
-  <div class="example example__third">
-    <script src="https://cdn.jsdelivr.net/gh/dimavasilyev/tp-widget@main/script/loader.js?test-task=tpdv&bgColor=green&textColor=black&btnColor=yellow" charset="UTF-8"></script>
+  <div class="example width500">
+    <script src="./loader.js?test-task=tpdv&bgColor=#6F69AC&btnColor=#FFEBA1" charset="UTF-8"></script>
+  </div>
+  <div class="example width250">
+    <script src="./loader.js?test-task=tpdv&bgColor=#F0E5CF&textColor=#2D2424&btnColor=#4B6587" charset="UTF-8"></script>
   </div>
 </body>
 </html>

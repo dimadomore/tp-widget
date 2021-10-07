@@ -8,11 +8,6 @@ module.exports = {
     filename: 'tp_widget.js',
     path: path.resolve(projectDir, './dist'),
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(projectDir, './src/index.html'),
-    }),
-  ],
   module: {
     rules: [
       {
